@@ -9,9 +9,11 @@ from sklearn.linear_model import SGDClassifier
 import numpy as np
 
 def get_numpy_array_of_digit_from_filename(filename):
-    digit_sample = io.imread(digit_sample_path, as_gray=True)
+    digit_sample = io.imread(filename, as_gray=True)
     digit_sample = transform.resize(digit_sample, (100, 100)) # Resize it to a fixed size so we don't have problems when training the model.
     digit_sample = digit_sample.flatten() # We turn the digit_sample matrix into an unidimensional array.
+
+    return digit_sample
 
 def load_dataset():
     print("Importing dataset...")
